@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import index from '@/index.vue'
+import detail from '@/detail.vue'
 // import a from '@/components/a'
 // import b from '@/components/b'
 
@@ -12,7 +13,12 @@ export default new Router({
       path: '/',
       name: 'index',
       component: index
-    }
+    },
+    {
+      path: '/detail',
+      name: 'detail',
+      component:detail
+    },
     // {
     //   path: '/a',
     //   name: 'a',

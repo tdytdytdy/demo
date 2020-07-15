@@ -1,0 +1,75 @@
+
+ [
+      {
+        "images":"url:require('@/static/imgages/detailimg.png')",
+        "descript": "“万岁”瓦当",
+        "rank": "三级",
+        "texture": "陶",
+        "time": "西汉",
+        "size":"通高45.5",
+        "diameter":"15.6",
+        "vatanthickness":"1.3",
+        "janewattsthickness":"1.2",
+        "weight":"1840"
+      },
+      {
+        "images":"../static/images/detailimg.png",
+        "descript": "西汉闽越国橙黄陶水管",
+        "rank": "三级",
+        "texture": "陶",
+        "time": "西汉",
+        "size":"通高45.5",
+        "diameter":"15.6",
+        "vatanthickness":"1.3",
+        "janewattsthickness":"1.2",
+        "weight":"1840"
+      },
+      {
+        "images":"../static/images/detailimg.png",
+        "descript": "西汉闽越国带筒瓦云树纹瓦当",
+        "rank": "三级",
+        "texture": "陶",
+        "time": "西汉",
+        "size":"通高45.5",
+        "diameter":"15.6",
+        "vatanthickness":"1.3",
+        "janewattsthickness":"1.2",
+        "weight":"1840"
+      },
+      {
+        "images":"../static/images/detailimg.png",
+        "descript": "西汉谷纹玉璜",
+        "rank": "三级",
+        "texture": "陶",
+        "time": "西汉",
+        "size":"通高45.5",
+        "diameter":"15.6",
+        "vatanthickness":"1.3",
+        "janewattsthickness":"1.2",
+        "weight":"1840"
+      },
+      {
+        "images":"../static/images/detailimg.png",
+        "descript": "西汉闽越国三足灰陶鼎",
+        "rank": "三级",
+        "texture": "陶",
+        "time": "西汉",
+        "size":"通高45.5",
+        "diameter":"15.6",
+        "vatanthickness":"1.3",
+        "janewattsthickness":"1.2",
+        "weight":"1840"
+      },
+      {
+        "images":"../static/images/detailimg.png",
+        "descript": "西汉闽越国卷云纹双耳",
+        "rank": "三级",
+        "texture": "陶",
+        "time": "西汉",
+        "size":"通高45.5",
+        "diameter":"15.6",
+        "vatanthickness":"1.3",
+        "janewattsthickness":"1.2",
+        "weight":"1840"
+      }    
+]
