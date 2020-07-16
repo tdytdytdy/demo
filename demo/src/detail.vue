@@ -5,51 +5,189 @@
         <img class="logoimg" src="@/assets/logo.png" alt />
       </div>
       <div class="content">
-        <div class="examine-3D">
-          <div class="examine-3D-watch">
+        <div class="examine-3D" >
+          <div class="examine-3D-watch" @click="vidiomodel">
             <img src="../src/assets/3d.png" alt />
             <p>查看3D</p>
           </div>
-          <img src="../src/assets/wansui.png" class="img1" />
+          <!-- <img src="../src/assets/wansui.png" class="img1" :style="item.icon"/> -->
+          <p class="img1" :style="item.icon"></p>
         </div>
-        <div class="header">西汉闽越国带筒瓦云树纹瓦当</div>
+        <div class="header">{{item.descript}}</div>
         <div class="subcontent">
           <div class="subsubcontent">
-            <div class="headercontent">西汉闽越国带筒瓦云树纹瓦当</div>
+            <div class="headercontent">{{item.descript}}</div>
             <div class="leftcontent">
-              <p>级别：三级</p>
-              <p>年代：西汉</p>
-              <p>瓦当直径：15.6</p>
-              <p>简瓦厚：1.2</p>
+              <p>级别：{{item.rank}}</p>
+              <p>年代：{{item.time}}</p>
+              <p>瓦当直径：{{item.diameter}}</p>
+              <p>简瓦厚：{{item.janewattsthickness}}</p>
             </div>
             <div class="rightcontent">
-              <p>质地：陶</p>
-              <p>尺寸（厘米）：通高45.5</p>
-              <p>瓦当厚：1.3</p>
-              <p>质量（克）：1840</p>
+              <p>质地：{{item.texture}}</p>
+              <p>尺寸（厘米）：{{item.size}}</p>
+              <p>瓦当厚:{{item.vatanthickness}}</p>
+              <p>质量（克）：{{item.weight}}</p>
             </div>
           </div>
         </div>
-        <img src="../src/assets/goback.png" alt="" @click="goback" class="gobackimg">
+        <img src="../src/assets/goback.png" alt @click="gobackidnex" class="gobackimg" />
       </div>
-      <div>
-        <img src="../src/assets/goback.png" alt="" @click="goback">
-      </div>
+      <div></div>
     </div>
   </div>
 </template>
 
 <script>
+import model from "./components/model";
+import {modelInfo} from "@/api/api";
 export default {
   name: "detail",
-  methods:{
-goback(){
-  this.$router.push('/')
-}
+  data() {
+    return {
+      id: this.$route.params.id,
+      item: [],
+      isImg: true,
+      // modelInfo: {},
+      detailinfo: [
+        {
+          id: 1,
+          icon: {
+            backgroundImage: "url(" + require("../src/assets/wansui.png") + ")",
+            backgroundRepeat: "no-repeat",
+            backgroundSize: "cotain"
+          },
+          descript: "“万岁”瓦当",
+          rank: "三级",
+          texture: "陶",
+          time: "西汉",
+          size: "通高45.5",
+          diameter: "15.6",
+          vatanthickness: "1.3",
+          janewattsthickness: "1.2",
+          weight: "1840"
+        },
+        {
+          id: 2,
+          icon: {
+            backgroundImage:
+              "url(" + require("../src/assets/shuiguan.png") + ")",
+            backgroundRepeat: "no-repeat",
+            backgroundSize: "cotain"
+          },
+          descript: "西汉闽越国橙黄陶水管",
+          rank: "三级",
+          texture: "陶",
+          time: "西汉",
+          size: "通高45.5",
+          diameter: "15.6",
+          vatanthickness: "1.3",
+          janewattsthickness: "1.2",
+          weight: "1840"
+        },
+        {
+          id: 3,
+          icon: {
+            backgroundImage:
+              "url(" + require("../src/assets/daitong.png") + ")",
+            backgroundRepeat: "no-repeat",
+            backgroundSize: "cotain"
+          },
+          descript: "西汉闽越国带筒瓦云树纹瓦当",
+          rank: "三级",
+          texture: "陶",
+          time: "西汉",
+          size: "通高45.5",
+          diameter: "15.6",
+          vatanthickness: "1.3",
+          janewattsthickness: "1.2",
+          weight: "1840"
+        },
+        {
+          id: 4,
+          icon: {
+            backgroundImage: "url(" + require("../src/assets/wenyu.png") + ")",
+            backgroundRepeat: "no-repeat",
+            backgroundSize: "cotain"
+          },
+          descript: "西汉谷纹玉璜",
+          rank: "三级",
+          texture: "陶",
+          time: "西汉",
+          size: "通高45.5",
+          diameter: "15.6",
+          vatanthickness: "1.3",
+          janewattsthickness: "1.2",
+          weight: "1840"
+        },
+        {
+          id: 5,
+          icon: {
+            backgroundImage: "url(" + require("../src/assets/huitao.png") + ")",
+            backgroundRepeat: "no-repeat",
+            backgroundSize: "cotain"
+          },
+          descript: "西汉闽越国三足灰陶鼎",
+          rank: "三级",
+          texture: "陶",
+          time: "西汉",
+          size: "通高45.5",
+          diameter: "15.6",
+          vatanthickness: "1.3",
+          janewattsthickness: "1.2",
+          weight: "1840"
+        },
+        {
+          id: 6,
+          icon: {
+            backgroundImage: "url(" + require("../src/assets/yunwen.png") + ")",
+            backgroundRepeat: "no-repeat",
+            backgroundSize: "cotain"
+          },
+          descript: "西汉闽越国卷云纹双耳",
+          rank: "三级",
+          texture: "陶",
+          time: "西汉",
+          size: "通高45.5",
+          diameter: "15.6",
+          vatanthickness: "1.3",
+          janewattsthickness: "1.2",
+          weight: "1840"
+        }
+      ]
+    };
   },
+  methods: {
+    gobackidnex() {
+      this.$router.push("/");
+    },
+    vidiomodel(){
+      alert(666)
+    }
+  },
+  // created() {
+  //   let me = this;
+  //   me.id = me.$route.query.id;
+  //   // me.getComment();
+  //   modelInfo({
+  //     id: me.id
+  //   }).then(res => {
+  //     me.modelInfo = res;
+  //     if (!res.model) {
+  //       me.isImg = true;
+  //     }
+  //   });
+  // },
+
   mounted() {
-   console.log(this.$route.params.id);
-}
+    console.log(this.$route.params.id);
+    for (var i = 0; i < this.detailinfo.length; i++) {
+      if (this.detailinfo[i].id == this.id) {
+        this.item = this.detailinfo[i];
+      }
+    }
+    console.log(this.item);
+  }
 };
 </script>
 
@@ -85,7 +223,6 @@ goback(){
         display: flex;
         width: 49%;
         height: 375px;
-        // margin:1% 0;
       }
     }
     .content {
@@ -98,8 +235,6 @@ goback(){
         width: 921px;
         height: 752px;
         overflow: hidden;
-        // text-align: center;
-        // background: url("../src/assets/wansui.png");
         margin: 25px auto;
         .examine-3D-watch {
           position: absolute;
@@ -109,6 +244,8 @@ goback(){
           height: 89.3px;
           border-radius: 45px;
           background-color: #1b1b1b;
+          cursor: pointer;
+          
           // margin-left:780px;
           img {
             width: 28.3px;
@@ -125,6 +262,7 @@ goback(){
           width: 921px;
           height: 752px;
           margin-top: 41px;
+          background-size: 100% 100%;
         }
       }
       .header {
@@ -151,7 +289,7 @@ goback(){
             text-align: left;
             margin-left: 75px;
             padding-bottom: 5px;
-            padding-top:10px;
+            padding-top: 10px;
           }
           .leftcontent {
             font-size: 30px;
@@ -176,12 +314,12 @@ goback(){
           }
         }
       }
-      .gobackimg{
+      .gobackimg {
         width: 198px;
         height: 72px;
         margin-top: 182px;
-        margin-right: 320px;
-        cursor:pointer;
+        margin-right: 290px;
+        cursor: pointer;
       }
     }
   }

@@ -198,7 +198,6 @@ export default {
       height: 1270px;
       background: rgba(255, 255, 255, 1);
       box-shadow: 0px 1px 16px 0px rgba(92, 92, 92, 1);
-      opacity: 0.6;
       margin: 0 auto;
       margin-top: 187px;
       .list {
@@ -221,6 +220,7 @@ export default {
           }
 
           p {
+
             position: absolute;
             left: 0;
             bottom: -24px;
