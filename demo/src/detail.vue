@@ -32,6 +32,9 @@
         </div>
         <img src="../src/assets/goback.png" alt="" @click="goback" class="gobackimg">
       </div>
+      <div>
+        <img src="../src/assets/goback.png" alt="" @click="goback">
+      </div>
     </div>
   </div>
 </template>
