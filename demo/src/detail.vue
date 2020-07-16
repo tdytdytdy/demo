@@ -30,6 +30,7 @@
             </div>
           </div>
         </div>
+        <img src="../src/assets/goback.png" alt="" @click="goback" class="gobackimg">
       </div>
     </div>
   </div>
@@ -37,7 +38,15 @@
 
 <script>
 export default {
-  name: "detail"
+  name: "detail",
+  methods:{
+goback(){
+  this.$router.push('/')
+}
+  },
+  mounted() {
+   console.log(this.$route.params.id);
+}
 };
 </script>
 
@@ -163,6 +172,13 @@ export default {
             }
           }
         }
+      }
+      .gobackimg{
+        width: 198px;
+        height: 72px;
+        margin-top: 182px;
+        margin-right: 320px;
+        cursor:pointer;
       }
     }
   }
