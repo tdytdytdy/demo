@@ -5,13 +5,15 @@
         <img class="logoimg" src="@/assets/logo.png" alt />
       </div>
       <div class="content">
-        <div class="examine-3D" >
-          <div class="examine-3D-watch" @click="vidiomodel">
-            <img src="../src/assets/3d.png" alt />
-            <p>查看3D</p>
+        <div class="contentdiv">
+          <div class="examine-3D" v-if="isImg">
+            <div class="examine-3D-watch" @click="isImg=false">
+              <img src="../src/assets/3d.png" alt />
+              <p>查看3D</p>
+            </div>
+            <p class="img1" :style="item.icon"></p>
           </div>
-          <!-- <img src="../src/assets/wansui.png" class="img1" :style="item.icon"/> -->
-          <p class="img1" :style="item.icon"></p>
+            <model v-else modelUrl="modelInfo.model"/>
         </div>
         <div class="header">{{item.descript}}</div>
         <div class="subcontent">
@@ -33,22 +35,24 @@
         </div>
         <img src="../src/assets/goback.png" alt @click="gobackidnex" class="gobackimg" />
       </div>
-      <div></div>
     </div>
   </div>
 </template>
 
 <script>
 import model from "./components/model";
-import {modelInfo} from "@/api/api";
+import { modelInfo } from "@/api/api";
 export default {
   name: "detail",
+  components: {
+    model
+  },
   data() {
     return {
       id: this.$route.params.id,
       item: [],
       isImg: true,
-      // modelInfo: {},
+      modelInfo: {},
       detailinfo: [
         {
           id: 1,
@@ -160,33 +164,31 @@ export default {
   methods: {
     gobackidnex() {
       this.$router.push("/");
-    },
-    vidiomodel(){
-      alert(666)
     }
   },
-  // created() {
-  //   let me = this;
-  //   me.id = me.$route.query.id;
-  //   // me.getComment();
-  //   modelInfo({
-  //     id: me.id
-  //   }).then(res => {
-  //     me.modelInfo = res;
-  //     if (!res.model) {
-  //       me.isImg = true;
-  //     }
-  //   });
-  // },
+  created() {
+    let me = this;
+    // me.id = me.$route.query.id;
+    modelInfo({
+      id: 90,
+    }).then(res => {
+      me.modelInfo = res;
+      // console.log(res);
+      // console.log(res.model);
+      if (!res.model) {
+        me.isImg = true;
+      }
+    });
+  },
 
   mounted() {
-    console.log(this.$route.params.id);
+    // console.log(this.$route.params.id);
     for (var i = 0; i < this.detailinfo.length; i++) {
       if (this.detailinfo[i].id == this.id) {
         this.item = this.detailinfo[i];
       }
     }
-    console.log(this.item);
+    // console.log(this.item);
   }
 };
 </script>
@@ -225,11 +227,16 @@ export default {
         height: 375px;
       }
     }
+    
     .content {
       width: 994px;
       height: 1518px;
       background: url("../src/assets/detailborder.png");
       margin: 80px auto;
+      .contentdiv{
+      width: 921px;
+        height: 752px;
+  margin: 25px auto;
       .examine-3D {
         position: relative;
         width: 921px;
@@ -245,7 +252,7 @@ export default {
           border-radius: 45px;
           background-color: #1b1b1b;
           cursor: pointer;
-          
+
           // margin-left:780px;
           img {
             width: 28.3px;
@@ -264,6 +271,7 @@ export default {
           margin-top: 41px;
           background-size: 100% 100%;
         }
+      }
       }
       .header {
         //   padding-top: 100px;
@@ -314,6 +322,7 @@ export default {
           }
         }
       }
+  
       .gobackimg {
         width: 198px;
         height: 72px;

@@ -3,7 +3,7 @@
 <!--        <div class="isLoaded flex-column-center" :class="{hide: isLoaded}">-->
         <div class="isLoaded flex-column-center" :class="{hide: isLoaded}">
             <div class="loading-txt flex-center">
-                <img src="/assets/1.gif" :class="{logo: isMobile}">
+                <img src="/assets/1.gif"/>
 <!--                <div>模型加载中</div>-->
             </div>
         </div>
@@ -122,7 +122,7 @@
                 isopen: false,
                 hottype: '',
                 imgIndex: 0,
-                isMobile: isMobile
+
             }
         },
         components:{

@@ -18,7 +18,7 @@
           >
             <p>{{item.descript}}</p>
           </li>
-          <li class="bottomList" v-for="(item,index) in bottomList" :key="index" :style="item.icon" @click="toDetail(item.id)">
+          <li class="bottomList" v-for="(item,index) in bottomList" :key="index+4" :style="item.icon" @click="toDetail(item.id)">
             <p>{{item.descript}}</p>
           </li>
         </ul>
@@ -138,7 +138,7 @@ export default {
           weight: "1840"
         }
       ]
-    };
+    }
   },
   computed: {
     topList() {
@@ -164,11 +164,7 @@ export default {
     toDetail(id) {
       // this.$router.push("/detail")
       this.$router.push({ name: 'detail', params: { id: id } })
-      
     }
-  },
-  mounted() {
-    console.log(detail);
   }
 };
 </script>

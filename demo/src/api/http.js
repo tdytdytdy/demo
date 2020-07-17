@@ -2,7 +2,7 @@ import axios from 'axios'
 import { Message } from 'element-ui'
 import query from 'querystringify'
 const service = axios.create({
-    baseURL: process.env.VUE_APP_BASEURL,
+    baseURL:"http://minyue-api.51jianmo.com",
     timeout: 8000
 })
 service.interceptors.response.use(
