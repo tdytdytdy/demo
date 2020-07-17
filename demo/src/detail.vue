@@ -13,7 +13,7 @@
             </div>
             <p class="img1" :style="item.icon"></p>
           </div>
-            <model v-else modelUrl="modelInfo.model"/>
+            <model class="model" v-else :modelUrl="modelInfo.model"/> 
         </div>
         <div class="header">{{item.descript}}</div>
         <div class="subcontent">
@@ -236,7 +236,7 @@ export default {
       .contentdiv{
       width: 921px;
         height: 752px;
-  margin: 25px auto;
+        margin: 25px auto;
       .examine-3D {
         position: relative;
         width: 921px;
@@ -271,6 +271,13 @@ export default {
           margin-top: 41px;
           background-size: 100% 100%;
         }
+      }
+      .model{
+        width: 921px;
+        height: 670px;
+        position: absolute;
+        margin-top: 65px;
+        // padding-top:55px;
       }
       }
       .header {

@@ -186,6 +186,7 @@
                 me.loadScript("/static/js/model.js", () => {
                     if (me.modelUrl) {
                         let {progress} = me.$refs;
+                        console.log(me.modelUrl)
                         me.modelObj = new JMYDModel({
                             file: me.modelUrl,
                             el: '#model',
