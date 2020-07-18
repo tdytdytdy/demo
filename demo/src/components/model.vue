@@ -3,7 +3,7 @@
 <!--        <div class="isLoaded flex-column-center" :class="{hide: isLoaded}">-->
         <div class="isLoaded flex-column-center" :class="{hide: isLoaded}">
             <div class="loading-txt flex-center">
-                <img src="/assets/1.gif"/>
+                <img src="../assets/1.gif"/>
 <!--                <div>模型加载中</div>-->
             </div>
         </div>
@@ -28,10 +28,10 @@
             <div class="flex cont">
                 <div class="btns flex">
                     <div class="flex" @click="playhot" :class="{active: isplayhot}">
-                        <img :src="isplayhot ? '/assets/model/pause_.png' : '/assets/model/play_.png'" alt />
+                        <img :src="isplayhot ? '../assets/model/pause_.png' : '../assets/model/play_.png'" alt />
                         <div>热点动画</div>
                     </div>
-                    <img src="/assets/model/round.png" class="round" @click="toggle = !toggle" />
+                    <img src="../assets/model/round.png" class="round" @click="toggle = !toggle" />
                 </div>
                 <ul class="flex-start" :class="{active: toggle}">
                     <li
