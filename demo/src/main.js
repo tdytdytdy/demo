@@ -8,11 +8,11 @@ import ElementUI from 'element-ui' //引入js
 import 'element-ui/lib/theme-chalk/index.css'//引入css
 Vue.use(ElementUI)
 
-// import SvgIcon from 'vue-svgicon'
+import SvgIcon from 'vue-svgicon'
 
-// Vue.use(SvgIcon, {
-//     tagName: 'svg-icon'
-// });
+Vue.use(SvgIcon, {
+    tagName: 'svg-icon'
+});
 
 
 Vue.config.productionTip = false
