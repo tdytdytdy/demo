@@ -11,7 +11,7 @@
               <img src="../src/assets/3d.png" alt />
               <p>查看3D</p>
             </div>
-            <p class="img1" :style="item.icon"></p>
+            <p class="img1"  :style="{backgroundImage:'url('+item.img+')'}"></p>
           </div>
             <model class="model" v-else :modelUrl="modelInfo.model"/> 
         </div>
@@ -42,6 +42,7 @@
 <script>
 import model from "./components/model";
 import { modelInfo } from "@/api/api";
+import detailinfo from "../static/major_info.json";
 export default {
   name: "detail",
   components: {
@@ -53,112 +54,113 @@ export default {
       item: [],
       isImg: true,
       modelInfo: {},
-      detailinfo: [
-        {
-          id: 1,
-          icon: {
-            backgroundImage: "url(" + require("../src/assets/wansui.png") + ")",
-            backgroundRepeat: "no-repeat",
-            backgroundSize: "cotain"
-          },
-          descript: "“万岁”瓦当",
-          rank: "三级",
-          texture: "陶",
-          time: "西汉",
-          size: "通高45.5",
-          diameter: "15.6",
-          vatanthickness: "1.3",
-          janewattsthickness: "1.2",
-          weight: "1840"
-        },
-        {
-          id: 2,
-          icon: {
-            backgroundImage:
-              "url(" + require("../src/assets/shuiguan.png") + ")",
-            backgroundRepeat: "no-repeat",
-            backgroundSize: "cotain"
-          },
-          descript: "西汉闽越国橙黄陶水管",
-          rank: "三级",
-          texture: "陶",
-          time: "西汉",
-          size: "通高45.5",
-          diameter: "15.6",
-          vatanthickness: "1.3",
-          janewattsthickness: "1.2",
-          weight: "1840"
-        },
-        {
-          id: 3,
-          icon: {
-            backgroundImage:
-              "url(" + require("../src/assets/daitong.png") + ")",
-            backgroundRepeat: "no-repeat",
-            backgroundSize: "cotain"
-          },
-          descript: "西汉闽越国带筒瓦云树纹瓦当",
-          rank: "三级",
-          texture: "陶",
-          time: "西汉",
-          size: "通高45.5",
-          diameter: "15.6",
-          vatanthickness: "1.3",
-          janewattsthickness: "1.2",
-          weight: "1840"
-        },
-        {
-          id: 4,
-          icon: {
-            backgroundImage: "url(" + require("../src/assets/wenyu.png") + ")",
-            backgroundRepeat: "no-repeat",
-            backgroundSize: "cotain"
-          },
-          descript: "西汉谷纹玉璜",
-          rank: "三级",
-          texture: "陶",
-          time: "西汉",
-          size: "通高45.5",
-          diameter: "15.6",
-          vatanthickness: "1.3",
-          janewattsthickness: "1.2",
-          weight: "1840"
-        },
-        {
-          id: 5,
-          icon: {
-            backgroundImage: "url(" + require("../src/assets/huitao.png") + ")",
-            backgroundRepeat: "no-repeat",
-            backgroundSize: "cotain"
-          },
-          descript: "西汉闽越国三足灰陶鼎",
-          rank: "三级",
-          texture: "陶",
-          time: "西汉",
-          size: "通高45.5",
-          diameter: "15.6",
-          vatanthickness: "1.3",
-          janewattsthickness: "1.2",
-          weight: "1840"
-        },
-        {
-          id: 6,
-          icon: {
-            backgroundImage: "url(" + require("../src/assets/yunwen.png") + ")",
-            backgroundRepeat: "no-repeat",
-            backgroundSize: "cotain"
-          },
-          descript: "西汉闽越国卷云纹双耳",
-          rank: "三级",
-          texture: "陶",
-          time: "西汉",
-          size: "通高45.5",
-          diameter: "15.6",
-          vatanthickness: "1.3",
-          janewattsthickness: "1.2",
-          weight: "1840"
-        }
-      ]
+      detailinfo,
+      // detailinfo: [
+      //   {
+      //     id: 1,
+      //     icon: {
+      //       backgroundImage: "url(" + require("../src/assets/wansui.png") + ")",
+      //       backgroundRepeat: "no-repeat",
+      //       backgroundSize: "cotain"
+      //     },
+      //     descript: "“万岁”瓦当",
+      //     rank: "三级",
+      //     texture: "陶",
+      //     time: "西汉",
+      //     size: "通高45.5",
+      //     diameter: "15.6",
+      //     vatanthickness: "1.3",
+      //     janewattsthickness: "1.2",
+      //     weight: "1840"
+      //   },
+      //   {
+      //     id: 2,
+      //     icon: {
+      //       backgroundImage:
+      //         "url(" + require("../src/assets/shuiguan.png") + ")",
+      //       backgroundRepeat: "no-repeat",
+      //       backgroundSize: "cotain"
+      //     },
+      //     descript: "西汉闽越国橙黄陶水管",
+      //     rank: "三级",
+      //     texture: "陶",
+      //     time: "西汉",
+      //     size: "通高45.5",
+      //     diameter: "15.6",
+      //     vatanthickness: "1.3",
+      //     janewattsthickness: "1.2",
+      //     weight: "1840"
+      //   },
+      //   {
+      //     id: 3,
+      //     icon: {
+      //       backgroundImage:
+      //         "url(" + require("../src/assets/daitong.png") + ")",
+      //       backgroundRepeat: "no-repeat",
+      //       backgroundSize: "cotain"
+      //     },
+      //     descript: "西汉闽越国带筒瓦云树纹瓦当",
+      //     rank: "三级",
+      //     texture: "陶",
+      //     time: "西汉",
+      //     size: "通高45.5",
+      //     diameter: "15.6",
+      //     vatanthickness: "1.3",
+      //     janewattsthickness: "1.2",
+      //     weight: "1840"
+      //   },
+      //   {
+      //     id: 4,
+      //     icon: {
+      //       backgroundImage: "url(" + require("../src/assets/wenyu.png") + ")",
+      //       backgroundRepeat: "no-repeat",
+      //       backgroundSize: "cotain"
+      //     },
+      //     descript: "西汉谷纹玉璜",
+      //     rank: "三级",
+      //     texture: "陶",
+      //     time: "西汉",
+      //     size: "通高45.5",
+      //     diameter: "15.6",
+      //     vatanthickness: "1.3",
+      //     janewattsthickness: "1.2",
+      //     weight: "1840"
+      //   },
+      //   {
+      //     id: 5,
+      //     icon: {
+      //       backgroundImage: "url(" + require("../src/assets/huitao.png") + ")",
+      //       backgroundRepeat: "no-repeat",
+      //       backgroundSize: "cotain"
+      //     },
+      //     descript: "西汉闽越国三足灰陶鼎",
+      //     rank: "三级",
+      //     texture: "陶",
+      //     time: "西汉",
+      //     size: "通高45.5",
+      //     diameter: "15.6",
+      //     vatanthickness: "1.3",
+      //     janewattsthickness: "1.2",
+      //     weight: "1840"
+      //   },
+      //   {
+      //     id: 6,
+      //     icon: {
+      //       backgroundImage: "url(" + require("../src/assets/yunwen.png") + ")",
+      //       backgroundRepeat: "no-repeat",
+      //       backgroundSize: "cotain"
+      //     },
+      //     descript: "西汉闽越国卷云纹双耳",
+      //     rank: "三级",
+      //     texture: "陶",
+      //     time: "西汉",
+      //     size: "通高45.5",
+      //     diameter: "15.6",
+      //     vatanthickness: "1.3",
+      //     janewattsthickness: "1.2",
+      //     weight: "1840"
+      //   }
+      // ]
     };
   },
   methods: {

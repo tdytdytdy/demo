@@ -4,7 +4,7 @@
         <div class="isLoaded flex-column-center" :class="{hide: isLoaded}">
             <div class="loading-txt flex-center">
                 <img src="../assets/1.gif"/>
-<!--                <div>模型加载中</div>-->
+               <div>模型加载中</div>
             </div>
         </div>
         <div id="model"></div>
@@ -17,6 +17,7 @@
                         :icon-class="item.isHover? 'i_full' : 'i_exit'"
                 />
                 <svg-icon v-else :icon-class="'i_'+item.icon" />
+                <!-- {{item.icon}} -->
               </span>
                 </el-tooltip>
             </li>
