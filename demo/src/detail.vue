@@ -13,7 +13,7 @@
             </div>
             <p class="img1"  :style="{backgroundImage:'url('+item.img+')'}"></p>
           </div>
-            <model class="model" v-else :modelUrl="modelInfo.model"/> 
+            <model class="model" v-else :modelUrl="detailinfo.model"/> 
         </div>
         <div class="header">{{item.descript}}</div>
         <div class="subcontent">
@@ -171,10 +171,10 @@ export default {
   created() {
     let me = this;
     // me.id = me.$route.query.id;
-    modelInfo({
-      id: 90,
+    detailinfo({
+      id: me.id,
     }).then(res => {
-      me.modelInfo = res;
+      me.detailinfo = res;
       // console.log(res);
       // console.log(res.model);
       if (!res.model) {

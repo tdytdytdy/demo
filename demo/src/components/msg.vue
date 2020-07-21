@@ -37,7 +37,6 @@
 </template>
 
 <script>
-import SvgIcon from 'vue-svgicon'
 export default {
   data() {
     return{

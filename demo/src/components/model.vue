@@ -390,6 +390,8 @@
            bottom: 7px;
            z-index: 20;
            li {
+               list-style: none;
+               float: left;
                margin-left: 15px;
                cursor: pointer;
                img {
